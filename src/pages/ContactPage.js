@@ -43,7 +43,7 @@ class ContactPage extends React.Component {
     });
   };
 
-  //continuare finalziare contact
+  //continuare finalizare contact
 
   render() {
     return (
