@@ -1,7 +1,6 @@
 {
- // "homepage": "http://Boghian-Gabriel.github.io/react-portofoliu",
- "homepage": "https://github.com/Boghian-Gabriel/react-portofoliu.git",
   "name": "my_portofolio",
+  "homepage": "https://github.com/Boghian-Gabriel/react-portofoliu.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -7,6 +7,9 @@ import Hero from "../components/Hero";
 import Content from "../components/Content";
 import FormGroup from "react-bootstrap/FormGroup";
 
+//documantation -> https://rapidapi.com/blog/axios-react-api-tutorial/?utm_source=google&utm_medium=cpc&utm_campaign=DSA&gclid=EAIaIQobChMIruiWmODH6wIVGevtCh3XHwNZEAAYASAAEgKTyPD_BwE
+import Axios from "axios";
+
 class ContactPage extends React.Component {
   constructor(props) {
     super(props);
@@ -36,11 +39,34 @@ class ContactPage extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    //atunci cand trimiti un mesaj sa astepte un raspuns : succes sau error
+    console.log(event.target);
+
     this.setState({
       disabled: true,
-      emailSend: false,
     });
+
+    Axios.post("http://localhost:3000/api/email", this.state)
+      .then((res) => {
+        if (res.data.success) {
+          this.setState({
+            disabled: false,
+            emailSent: true,
+          });
+        } else {
+          this.setState({
+            disabled: false,
+            emailSent: false,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+
+        this.setState({
+          disabled: false,
+          emailSent: false,
+        });
+      });
   };
 
   //continuare finalizare contact
@@ -87,6 +113,7 @@ class ContactPage extends React.Component {
             </FormGroup>
 
             <Button
+              className="btn-submit"
               variant="primary"
               type="submit"
               disabled={this.state.disabled}
@@ -100,7 +127,7 @@ class ContactPage extends React.Component {
               </p>
             )}
             {this.state.emailSend === false && (
-              <p className="d-inline err-msg">E-mail-ul nu a fost trimis</p>
+              <p className="d-inline err-msg">E-mail-ul nu a fost trimis!</p>
             )}
           </Form>
         </Content>

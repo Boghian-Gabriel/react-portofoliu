@@ -16,10 +16,10 @@ class Carousel extends React.Component {
       items: [
         {
           id: 0,
-          title: "Marius Gabriel",
-          subtitle: "The cookbook for developers",
+          title: "Boghian",
+          subtitle: "Marius-Gabriel",
           imageSrc: bg,
-          link: "asd",
+          link: "https://www.facebook.com/BMarius.Gabriel/",
           selected: false,
         },
         {
@@ -32,8 +32,8 @@ class Carousel extends React.Component {
         },
         {
           id: 2,
-          title: "GitHub",
-          subtitle: "A social network for developers",
+          title: "Marius-Gabriel",
+          subtitle: "GitHub",
           imageSrc: git,
           link: "https://github.com/Boghian-Gabriel",
           selected: false,
