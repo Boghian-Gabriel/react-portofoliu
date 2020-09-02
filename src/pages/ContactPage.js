@@ -5,9 +5,6 @@ import Button from "react-bootstrap/Button";
 
 import Hero from "../components/Hero";
 import Content from "../components/Content";
-import FormGroup from "react-bootstrap/FormGroup";
-
-//documantation -> https://rapidapi.com/blog/axios-react-api-tutorial/?utm_source=google&utm_medium=cpc&utm_campaign=DSA&gclid=EAIaIQobChMIruiWmODH6wIVGevtCh3XHwNZEAAYASAAEgKTyPD_BwE
 import Axios from "axios";
 
 class ContactPage extends React.Component {
@@ -17,15 +14,12 @@ class ContactPage extends React.Component {
       name: "",
       email: "",
       message: "",
-      disabled: "",
-      send: null,
+      disabled: false,
+      emailSent: null,
     };
   }
 
-  //pentru a putea completa campurile corespunzatoare
   handleChange = (event) => {
-    console.log(event);
-
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
@@ -35,7 +29,6 @@ class ContactPage extends React.Component {
     });
   };
 
-  //dupa ce apas butonul trimite sa nu se dea refresh la pagina
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -45,7 +38,7 @@ class ContactPage extends React.Component {
       disabled: true,
     });
 
-    Axios.post("http://localhost:3000/api/email", this.state)
+    Axios.post("http://localhost:3030/api/email", this.state)
       .then((res) => {
         if (res.data.success) {
           this.setState({
@@ -60,6 +53,7 @@ class ContactPage extends React.Component {
         }
       })
       .catch((err) => {
+        //daca apare o eroare
         console.log(err);
 
         this.setState({
@@ -69,8 +63,6 @@ class ContactPage extends React.Component {
       });
   };
 
-  //continuare finalizare contact
-
   render() {
     return (
       <div>
@@ -78,8 +70,8 @@ class ContactPage extends React.Component {
 
         <Content>
           <Form onSubmit={this.handleSubmit}>
-            <FormGroup>
-              <Form.Label htmlFor="full-name">Numele Complet</Form.Label>
+            <Form.Group>
+              <Form.Label htmlFor="full-name">Full Name</Form.Label>
               <Form.Control
                 id="full-name"
                 name="name"
@@ -87,10 +79,10 @@ class ContactPage extends React.Component {
                 value={this.state.name}
                 onChange={this.handleChange}
               />
-            </FormGroup>
+            </Form.Group>
 
-            <FormGroup>
-              <Form.Label htmlFor="email">E-mail</Form.Label>
+            <Form.Group>
+              <Form.Label htmlFor="email">Email</Form.Label>
               <Form.Control
                 id="email"
                 name="email"
@@ -98,10 +90,10 @@ class ContactPage extends React.Component {
                 value={this.state.email}
                 onChange={this.handleChange}
               />
-            </FormGroup>
+            </Form.Group>
 
-            <FormGroup>
-              <Form.Label htmlFor="message">Mesaj</Form.Label>
+            <Form.Group>
+              <Form.Label htmlFor="message">Message</Form.Label>
               <Form.Control
                 id="message"
                 name="message"
@@ -110,23 +102,23 @@ class ContactPage extends React.Component {
                 value={this.state.message}
                 onChange={this.handleChange}
               />
-            </FormGroup>
+            </Form.Group>
 
             <Button
-              className="btn-submit"
+              className="d-inline-block"
               variant="primary"
               type="submit"
               disabled={this.state.disabled}
             >
-              Trimite
+              Send
             </Button>
 
-            {this.state.emailSend === true && (
-              <p className="d-inline succes-msg">
+            {this.state.emailSent === true && (
+              <p className="d-inline success-msg">
                 E-mail-ul a fost trimis cu succes!
               </p>
             )}
-            {this.state.emailSend === false && (
+            {this.state.emailSent === false && (
               <p className="d-inline err-msg">E-mail-ul nu a fost trimis!</p>
             )}
           </Form>
