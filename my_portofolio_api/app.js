@@ -34,7 +34,7 @@ app.post("/api/email", (req, res, next) => {
   const msg = {
     to: "boghiangabriel96@yahoo.com",
     from: req.body.email,
-    subject: "Website Contact",
+    subject: "Contact Page",
     text: req.body.message,
   };
 
