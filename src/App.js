@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import HomePage from "../src/pages/HomePage";
 import AboutPage from "../src/pages/AboutPage";
 import ContactPage from "../src/pages/ContactPage";
+import ContactPage2 from "../src/pages/ContactPage2";
 
 //Using React-Boostrap, React-Spring(animated), React-UIGradient, React-Components
 // npm install --save axios for api contact page
@@ -19,23 +20,23 @@ class App extends React.Component {
     this.state = {
       title: "Marius-Gabriel",
       headerLinks: [
-        { title: "Home", path: "/" },
-        { title: "About", path: "/about" },
+        { title: "Acasă", path: "/" },
+        { title: "Informații", path: "/about" },
         { title: "Contact", path: "/contact" },
       ],
 
       home: {
-        title: "BE RELENTLESS",
-        subtitle: "Project the make a difference",
-        text: "Checkout my projects below",
+        title: "Junior Software Developer",
+        subtitle: "Proiectele mele",
+        text: "Pentru a mă cunoaște mai bine, accesați următoarele link-uri.",
       },
 
       about: {
-        title: "About me!",
+        title: "Despre mine!",
       },
 
       contact: {
-        title: "Let's talk!",
+        title: "Contact!",
       },
     };
   }
@@ -56,10 +57,10 @@ class App extends React.Component {
             <NavBar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/">
-                  Home
+                  Acasă
                 </Link>
                 <Link className="nav-link" to="/about">
-                  About
+                  Informații
                 </Link>
                 <Link className="nav-link" to="/contact">
                   Contact
@@ -86,7 +87,7 @@ class App extends React.Component {
           />
           <Route
             path="/contact"
-            render={() => <ContactPage title={this.state.contact.title} />}
+            render={() => <ContactPage2 />}
             //contactpage2
           />
           <Footer />
@@ -97,3 +98,4 @@ class App extends React.Component {
 }
 
 export default App;
+//title={this.state.contact.title}

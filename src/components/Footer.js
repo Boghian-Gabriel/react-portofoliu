@@ -19,7 +19,7 @@ function Footer() {
             Marius-Gabriel
           </Col>
           <Col className="p-0 d-flex justify-content-end" md={3}>
-            This site made by Marius-Gabriel
+            Site de prezentare
           </Col>
         </Row>
       </Container>

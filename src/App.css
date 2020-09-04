@@ -47,3 +47,53 @@
 /*footer*/
 
 /*ContactPage2*/
+.contact-body {
+  /* margin: auto; */
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  /* background-color: green; */
+  /* box-shadow: 2px 2px 2px 2px black; */
+}
+.contact-grid {
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: lightgray;
+  color: black;
+}
+.contact-grid h2 {
+  font-family: "Anton", sans-serif;
+}
+
+.contact-grid p {
+  font-family: "Oxygen", sans-serif;
+  font-weight: bold;
+}
+
+.contact-grid hr {
+  border-top: 5px dotted black;
+  width: 50%;
+  margin: auto;
+}
+
+.contact-list {
+  display: inline-flex;
+  margin-top: 40px;
+}
+.contact-list .list-item {
+  display: inline-flex;
+  font-size: 40px;
+
+  padding-top: 30px;
+}
+.contact-list .list-item i {
+  margin-right: 20px;
+}
+.contact-list .list-item h3 {
+  margin-right: 10px;
+}
