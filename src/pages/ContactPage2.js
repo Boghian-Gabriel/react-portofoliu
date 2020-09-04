@@ -24,7 +24,7 @@ class ContactPage2 extends Component {
               </p>
             </Cell>
             <Cell col={6}>
-              <h2>Informații de contact</h2>
+              <h2>Contact</h2>
               <hr />
 
               <div className="contact-list">

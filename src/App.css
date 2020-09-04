@@ -53,7 +53,7 @@
   height: 100%;
   justify-content: center;
   /* background-color: green; */
-  /* box-shadow: 2px 2px 2px 2px black; */
+  box-shadow: 0.5px 0.5px 1px 1px black;
 }
 .contact-grid {
   margin-top: 20px;
@@ -63,17 +63,18 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: lightgray;
+  background: white;
   color: black;
+  border: 0.5px solid lightgrey;
 }
-.contact-grid h2 {
+/* .contact-grid h2 {
   font-family: "Anton", sans-serif;
 }
 
 .contact-grid p {
   font-family: "Oxygen", sans-serif;
   font-weight: bold;
-}
+} */
 
 .contact-grid hr {
   border-top: 5px dotted black;
@@ -88,6 +89,7 @@
 .contact-list .list-item {
   display: inline-flex;
   font-size: 40px;
+  margin-right: 50px;
 
   padding-top: 30px;
 }
