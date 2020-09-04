@@ -9,11 +9,13 @@ class ContactPage2 extends Component {
       " Salut! \nNumele meu este Boghian Marius-Gabriel. Mi-ar face mare plăcere să-mi găsesc un job în domeniu. Sunt o persoana foarte motivată și dispusă pentru noi provocări. Aș dori să necunoaștem. \nMulțumesc!";
 
     return (
-      <Content>
+      <Content fluid={true}>
         <div className="contact-body">
           <Grid className="contact-grid">
             <Cell col={6}>
               <h2>Boghian</h2>
+              {/* initial nu era si aici hr */}
+              <hr />
               <img
                 src={bg}
                 alt="avatar"
